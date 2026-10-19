@@ -1,0 +1,89 @@
+:root {
+  --bg: #05070d;
+  --night: #07131c;
+  --ink: #ffffff;
+  --text: rgba(255, 255, 255, 0.78);
+  --muted: rgba(255, 255, 255, 0.58);
+  --stroke: rgba(255, 255, 255, 0.14);
+  --card: rgba(255, 255, 255, 0.04);
+  --gold: #ffce80;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  background: radial-gradient(120% 70% at 70% 0%, #10284a 0%, var(--night) 45%, var(--bg) 100%) fixed;
+  color: var(--text);
+  font: 400 17px/1.6 'Quicksand', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--ink); text-underline-offset: 3px; text-decoration-color: rgba(255, 255, 255, 0.4); }
+a:hover { text-decoration-color: var(--gold); }
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.narrow { max-width: 720px; }
+
+header.top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0;
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand img { width: 40px; height: 40px; }
+.brand span { font-family: 'Parkinsans', 'Quicksand', sans-serif; font-weight: 300; font-size: 24px; color: var(--ink); letter-spacing: 0.5px; }
+nav a { margin-left: 18px; color: var(--muted); text-decoration: none; font-size: 15px; }
+nav a:hover { color: var(--ink); }
+
+.eyebrow { text-transform: uppercase; letter-spacing: 2.5px; font-size: 13px; color: var(--muted); margin: 0 0 10px; }
+
+h1, h2, h3 { color: var(--ink); font-weight: 500; line-height: 1.15; }
+h1 { font-size: clamp(38px, 7vw, 64px); margin: 0 0 18px; letter-spacing: -0.5px; }
+h2 { font-size: clamp(26px, 4vw, 34px); margin: 56px 0 14px; }
+h3 { font-size: 19px; margin: 28px 0 8px; }
+
+.hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; padding: 40px 0 20px; }
+.hero p.lead { font-size: 20px; color: var(--text); max-width: 34ch; }
+.hero .logo { width: 100%; max-width: 360px; justify-self: center; filter: drop-shadow(0 0 40px rgba(44, 107, 255, 0.35)); }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid var(--gold); background: rgba(255, 206, 128, 0.12);
+  color: var(--gold); border-radius: 999px; padding: 8px 16px; font-size: 15px; margin-top: 8px;
+}
+
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+.card {
+  border: 1px solid var(--stroke); background: var(--card); border-radius: 24px; padding: 22px;
+}
+.card h3 { margin-top: 0; }
+.card p { margin: 0; color: var(--muted); font-size: 16px; }
+
+.screens { display: flex; gap: 18px; justify-content: center; margin: 26px 0 6px; flex-wrap: wrap; }
+.screens img { width: 220px; max-width: 30%; border-radius: 28px; border: 1px solid var(--stroke); }
+
+.plus { border-color: var(--gold); }
+.plus .price { color: var(--ink); font-size: 22px; margin: 6px 0 2px; }
+
+.legal h2 { font-size: 24px; margin-top: 40px; }
+.legal table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 10px 0; }
+.legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--stroke); }
+.legal th { color: var(--ink); font-weight: 600; }
+.legal ul { padding-left: 20px; }
+
+details { border: 1px solid var(--stroke); border-radius: 18px; padding: 14px 18px; margin: 10px 0; background: var(--card); }
+summary { cursor: pointer; color: var(--ink); font-weight: 500; }
+details p { margin: 10px 0 0; color: var(--muted); }
+
+footer { border-top: 1px solid var(--stroke); margin-top: 64px; padding: 26px 0 40px; font-size: 14px; color: var(--muted); }
+footer a { color: var(--muted); margin-right: 16px; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-top: 10px; }
+  .hero .logo { max-width: 220px; order: -1; }
+  .features { grid-template-columns: 1fr; }
+  .screens img { max-width: 45%; }
+  nav a { margin-left: 12px; }
+}
